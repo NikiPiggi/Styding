@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GW_1
 {
-    public class Dec
+    public class Dec: IDec
     {
         int[] storge;//Массив
         int head;//Первый элемент
@@ -29,7 +29,7 @@ namespace GW_1
             {
                 res += Convert.ToString(val) + " ";
             }
-            return res;
+            return res.TrimEnd();
         }
 
         public Dec()//По умолчанию
@@ -60,7 +60,7 @@ namespace GW_1
             Save(input);
 
         }
-        void Save(int[] input)//Переносит входной массив в храмиый
+        private void Save(int[] input)//Переносит входной массив в храмиый
         {
             for (int i = 0; i < input.Count(); i++)
             {
